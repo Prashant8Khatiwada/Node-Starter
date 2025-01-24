@@ -44,7 +44,7 @@ This repository is dedicated to tracking and documenting the learning journey of
 
 #### Creating a Server
 
-- The `http.createServer()` method initializes a server that listens to incoming requests
+- The `http.createServer()` method initializes a server that listens to incoming requests and never finishes by default
 
 #### Routing
 
@@ -53,17 +53,19 @@ This repository is dedicated to tracking and documenting the learning journey of
 - Serves an HTML form for users to submit a message
 - Handles GET requests and responds with an HTML document
 
-##### Message Route (/message)
-
-- Handles POST requests
-- Saves a hardcoded message to message.txt using `fs.writeFileSync()`
-- Redirects to `/` after processing with `res.statusCode` and a Location header
-
-#### Response Handling
-
-##### Setting Headers
+##### Setting Headers and HTML Content
 
 - Adds `Content-Type: text/html` to the response header for HTML output
+- Uses `res.write()` to send HTML content
+
+```const http = require('http');
+  res.setHeader('Content-Type', 'text/html');
+  res.write('<html>');
+  res.write('<head><title>Hello Node.js</title></head>');
+  res.write('<body><h1>Hello from Node.js!</h1></body>');
+  res.write('</html>');
+  res.end();
+```
 
 ##### Ending the Response
 
