@@ -46,12 +46,11 @@ This repository is dedicated to tracking and documenting the learning journey of
 
 - The `http.createServer()` method initializes a server that listens to incoming requests and never finishes by default
 
-#### Routing
-
-##### Root Route (/)
-
-- Serves an HTML form for users to submit a message
-- Handles GET requests and responds with an HTML document
+```
+const server = http.createServer((req, res) => {
+  console.log(req.url, req.method, req.headers);
+});
+```
 
 ##### Setting Headers and HTML Content
 
@@ -71,12 +70,14 @@ This repository is dedicated to tracking and documenting the learning journey of
 
 - Uses `res.end()` to finalize the response after sending data
 
-#### Starting the Server
-
 ##### Listening on a Port
 
 - Starts the server on port 5000 using `server.listen()`
 - Logs a confirmation message once the server is running
+
+```
+server.listen(5000, () => console.log('Server running on port 5000'));
+```
 
 ### Efficient Development
 

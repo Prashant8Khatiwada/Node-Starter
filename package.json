@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-starter",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "homepage": "https://github.com/Prashant8Khatiwada/Node-Starter#readme",
+  "bugs": {
+    "url": "https://github.com/Prashant8Khatiwada/Node-Starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prashant8Khatiwada/Node-Starter.git"
+  },
+  "license": "MIT",
+  "author": "Prashant Khatiwada",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "dev": "nodemon core/app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
