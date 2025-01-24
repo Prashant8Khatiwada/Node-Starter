@@ -35,41 +35,46 @@ This repository is dedicated to tracking and documenting the learning journey of
 
 ### Node.js Basics
 
-- [ ] Learn the fundamentals of Node.js
+#### Handling HTTP Requests
 
-  const http = require("http");
-  const fs = require("fs");
+#### Importing Core Modules
 
-  const server = http.createServer((req, res) => {
-  console.log(req.url, req.method, req.headers);
-  if (req.url === "/") {
-  res.write("<html>");
-  res.write("<head><title>Enter Message</title></head>");
-  res.write(
-  "<body><form action='/message' method='POST'><input type='text' name='message'><button type='submit'>Send</button></form></body>"
-  );
-  res.write("</html>");
-  return res.end();
-  }
-  if (req.url === "/message" && req.method === "POST") {
-  fs.writeFileSync("message.txt", "Dummy Data");
-  res.statusCode = 302;
-  req.headers.location = "/";
-  return res.end();
-  }
-  res.setHeader("Content-Type", "text/html");
-  res.write("<html>");
-  res.write("<head><title>My First Page</title></head>");
-  res.write("<body><h1>Hello from my Node.js Server!</h1></body>");
-  res.write("</html>");
-  res.end();
-  });
+- `http` is used to create the server
+- `fs` is used for file operations
 
-  server.listen(5000, () => {
-  console.log("Server listening on port : 5000....");
-  });
+#### Creating a Server
 
-- [ ] Understand the event loop and asynchronous programming
+- The `http.createServer()` method initializes a server that listens to incoming requests
+
+#### Routing
+
+##### Root Route (/)
+
+- Serves an HTML form for users to submit a message
+- Handles GET requests and responds with an HTML document
+
+##### Message Route (/message)
+
+- Handles POST requests
+- Saves a hardcoded message to message.txt using `fs.writeFileSync()`
+- Redirects to `/` after processing with `res.statusCode` and a Location header
+
+#### Response Handling
+
+##### Setting Headers
+
+- Adds `Content-Type: text/html` to the response header for HTML output
+
+##### Ending the Response
+
+- Uses `res.end()` to finalize the response after sending data
+
+#### Starting the Server
+
+##### Listening on a Port
+
+- Starts the server on port 5000 using `server.listen()`
+- Logs a confirmation message once the server is running
 
 ### Efficient Development
 
