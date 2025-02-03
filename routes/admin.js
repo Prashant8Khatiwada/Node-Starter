@@ -1,13 +1,9 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import __dirname from "../utils/path.js";
 
 const router = express.Router();
 router.use(express.urlencoded({ extended: false }));
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // GET route to display the add-product form
 router.get("/add-product", (req, res) => {
