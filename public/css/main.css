@@ -32,3 +32,8 @@ nav ul li a:hover {
     color: #ddd;
     text-decoration: underline;
 }
+
+nav ul li a.active {
+    color: #ddd;
+    text-decoration: underline;
+}

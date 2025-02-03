@@ -8,7 +8,10 @@ const products = [];
 // GET route to display the add-product form
 router.get("/add-product", (req, res) => {
   // res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
-  res.render("add-product", { docTitle: "Add Product" });
+  res.render("add-product", {
+    docTitle: "Add Product",
+    path: "/admin/add-product",
+  });
 });
 
 // POST route to handle form submission

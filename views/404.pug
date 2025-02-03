@@ -1,12 +1,9 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title #{docTitle}
+extends layout/main-layout.pug
+
+block styles
     link(rel="stylesheet", href="/css/404.css")
-     
-  body
+
+block content
     h1 404
     p Oops! The page you're looking for cannot be found.
     a(href="/") Return to Homepage
