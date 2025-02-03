@@ -22,9 +22,11 @@ html(lang="en")
                     each product in prods
                         article.card
                             h1 #{product.title}
+                            .card__image
+                                img(src=product.imageUrl, alt=product.title)
                             .card__content
-                                h2 $19.99
-                                p Product description goes here...
+                                h2 $ #{product.price}
+                                p #{product.description}
                             .card__actions
                                 button Add to Cart
                 else
